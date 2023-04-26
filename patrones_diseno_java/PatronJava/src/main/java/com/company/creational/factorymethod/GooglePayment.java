@@ -10,7 +10,7 @@ public class GooglePayment implements Payment{
         StringBuilder stringbuilder= new StringBuilder();
         stringbuilder.append("-------------------------");
         stringbuilder.append(System.getProperty("line.separator"));
-        stringbuilder.append("Pagando com GooglePayment");
+        stringbuilder.append("Pagando com Google Payment");
         stringbuilder.append(System.getProperty("line.separator"));
         stringbuilder.append("-------------------------");
 

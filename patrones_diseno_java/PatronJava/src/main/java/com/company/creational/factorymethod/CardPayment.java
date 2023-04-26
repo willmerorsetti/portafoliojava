@@ -10,7 +10,7 @@ public class CardPayment implements Payment{
         StringBuilder stringbuilder= new StringBuilder();
         stringbuilder.append("-------------------------");
         stringbuilder.append(System.getProperty("line.separator"));
-        stringbuilder.append("Pagando com CARDPayment");
+        stringbuilder.append("Pagando com CARD Payment");
         stringbuilder.append(System.getProperty("line.separator"));
         stringbuilder.append("-------------------------");
 

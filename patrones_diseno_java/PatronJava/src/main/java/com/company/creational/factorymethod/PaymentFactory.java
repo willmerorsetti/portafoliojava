@@ -16,7 +16,7 @@ public class PaymentFactory {
             case CARD :
                 return new CardPayment();
             default :
-                return new DefaultPayment();
+                return new CardPayment();
         }
     }
 }
