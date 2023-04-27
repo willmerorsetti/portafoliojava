@@ -21,10 +21,11 @@ public class Main {
 
         //probarFactoryMethod();
         //probarFactoryMethodvehiculo();
-        probarAbstractFactory();
+        //probarAbstractFactory();
+        probarBuilder();
     }
     private static void probarAbstractFactory(){
-        System.out.println("<Abstract Factory Patron>");
+        System.out.println("5.<Abstract Factory Patron>");
 
         AbstractFactory abstractFactory= FactoryProvider.getFactory("Card");
         Card tarjeta = (Card)abstractFactory.create("VISA");
@@ -37,13 +38,29 @@ public class Main {
 
     }
     private static void probarFactoryMethod(){
-        System.out.println("<Factory Method Patron>");
+        System.out.println("<4.Factory Method Patron>");
         Payment payment=PaymentFactory.buildPayment (TypePayment.CARD);
         payment.doPayment();
     }
     private static void probarFactoryMethodvehiculo(){
-        System.out.println("<Factory Method Patron> ejemplo 2");
+        System.out.println("<4.1 Factory Method Patron> ejemplo 2");
         ProductoVehiculo producto = VentaVehiculoFactory.buildVentaVehiculo(TypeVehiculo.CAMION);
         producto.doVenta();
     }
+    private static void probarBuilder(){
+        com.company.creational.builder.Card card=new com.company.creational.builder.Card.CardBuilder("VISA","0000 1111 2222 3333")
+                .name("Willmer")
+                .expire(2030)
+                .credit(true)
+                .build();
+        System.out.println("<6.Build Patron> resultado:" +card);
+        com.company.creational.builder.Card card2=new com.company.creational.builder.Card.CardBuilder("AMEX","0000 1111 2222 4444")
+                .name("JOSE")
+                .expire(2026)
+                .credit(true)
+                .build();
+        System.out.println("<6.Build Patron> resultado2:" +card2);
+        com.company.creational.builder.Card card3=new com.company.creational.builder.Card.CardBuilder("MASTER","0000 1111 2222 5555")
+               .build();
+        System.out.println("<6.Build Patron> resultado3:" +card3);    }
 }
