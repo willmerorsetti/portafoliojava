@@ -2,6 +2,8 @@ package com.company;
 
 import com.company.creational.abstractfactory.*;
 
+import com.company.creational.bilder2.Employee;
+import com.company.creational.bilder2.EmployeeBuilder;
 import com.company.creational.factorymethod.Payment;
 import com.company.creational.factorymethod.PaymentFactory;
 import com.company.creational.factorymethod.TypePayment;
@@ -23,6 +25,7 @@ public class Main {
         //probarFactoryMethodvehiculo();
         //probarAbstractFactory();
         probarBuilder();
+        probarBuilder2();
     }
     private static void probarAbstractFactory(){
         System.out.println("5.<Abstract Factory Patron>");
@@ -62,5 +65,21 @@ public class Main {
         System.out.println("<6.Build Patron> resultado2:" +card2);
         com.company.creational.builder.Card card3=new com.company.creational.builder.Card.CardBuilder("MASTER","0000 1111 2222 5555")
                .build();
-        System.out.println("<6.Build Patron> resultado3:" +card3);    }
+        System.out.println("<6.Build Patron> resultado3:" +card3);
+    }
+    public static void probarBuilder2() {
+        System.out.println("<6.1 Build2 Patron> ");
+        Employee employee = new EmployeeBuilder()
+                .setId_user(1).setName("James")
+                .setSurname("Gosling")
+                .build();
+        System.out.println(employee.toString());
+
+        Employee employee2 = new EmployeeBuilder()
+                .setId_user(2)
+                .setName("Java")
+                .setSurname("desde0.com")
+                .build();
+        System.out.println(employee2.toString());
+    }
 }

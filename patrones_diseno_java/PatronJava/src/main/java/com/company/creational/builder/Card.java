@@ -5,6 +5,7 @@ public class Card {
     private final String number;
     private final String name;
     private final int expire;
+    private final boolean credit;
 
     public String getNumber() {
         return number;
@@ -31,7 +32,6 @@ public class Card {
         return "Card :"+" "+cardType+" "+number +" "+expire+" "+name+" "+credit;
     }
 
-    private final boolean credit;
 
     private Card (CardBuilder builder) {
         this.cardType=builder.cardType;
